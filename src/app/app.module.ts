@@ -42,7 +42,7 @@ import {MatMomentDateModule} from "@angular/material-moment-adapter";
         BrowserAnimationsModule,
         HttpClientModule,
         MatMenuModule,
-        MatButtonModule,
+        MatButtonModule,MatToolbarModule,
         MatIconModule,
         MatCardModule,
         MatTabsModule,
