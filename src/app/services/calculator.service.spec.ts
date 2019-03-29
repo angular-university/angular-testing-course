@@ -1,5 +1,6 @@
 import {CalculatorService} from './calculator.service';
 import {LoggerService} from './logger.service';
+import {TestBed} from '@angular/core/testing';
 
 
 describe('CalculatorService', () => {
@@ -15,7 +16,14 @@ describe('CalculatorService', () => {
 
     loggerSpy.log.and.returnValue(undefined);
 
-    calculator = new CalculatorService(loggerSpy);
+    TestBed.configureTestingModule({
+      providers: [
+        CalculatorService,
+        {provide: LoggerService, useValue: loggerSpy}
+      ]
+    });
+
+    calculator = TestBed.get(CalculatorService);
 
   });
 
