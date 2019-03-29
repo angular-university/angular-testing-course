@@ -3,7 +3,7 @@ export interface Course {
   seqNo:number;
   titles: {
     description:string;
-    longDescription: string;
+    longDescription?: string;
   };
   iconUrl: string;
   uploadedImageUrl:string;
