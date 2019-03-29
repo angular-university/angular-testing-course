@@ -6,6 +6,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {By} from '@angular/platform-browser';
 
 describe('AppComponent', () => {
+
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -22,22 +24,34 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+
+
   it('should create the app', async(() => {
+
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
+
   }));
 
-  it(`should have as title 'app'`, async(() => {
+
+
+  it(`should have a title property`, async(() => {
+
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Angular Testing Course');
+
   }));
 
-  it('should render home component title', async(() => {
+
+
+  it('should have a navigation menu', async(() => {
+
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     expect(fixture.debugElement.queryAll(By.css('mat-toolbar'))).toBeTruthy();
+
   }));
 
 });
