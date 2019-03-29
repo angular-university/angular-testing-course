@@ -63,7 +63,7 @@ describe('CoursesService', () => {
   });
 
 
-  it('should error the returned observable if request fails', () => {
+  it('should throw error if request fails', () => {
 
     const errorMessage = 'Internal Server Error';
 
