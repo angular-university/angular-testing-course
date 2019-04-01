@@ -37,7 +37,10 @@ import {CoursesModule} from './courses/courses.module';
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        CoursesModule
+        MatToolbarModule,
+        MatButtonModule,
+        CoursesModule,
+        AppRoutingModule
     ],
     providers: [
     ],

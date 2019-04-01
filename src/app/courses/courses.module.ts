@@ -44,18 +44,17 @@ import {CourseResolver} from './services/course.resolver';
     MatTabsModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule,
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    AppRoutingModule,
     MatSelectModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   exports: [
     HomeComponent,
