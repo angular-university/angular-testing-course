@@ -8,11 +8,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './courses/home/home.component';
 import { AboutComponent } from './about/about.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { CoursesCardListComponent } from './courses-card-list/courses-card-list.component';
-import {CourseComponent} from "./course/course.component";
+import { CoursesCardListComponent } from './courses/courses-card-list/courses-card-list.component';
+import {CourseComponent} from "./courses/course/course.component";
 import {
     MatDatepickerModule,
     MatDialogModule,
@@ -21,52 +21,28 @@ import {
     MatTableModule,
     MatToolbarModule
 } from "@angular/material";
-import {CoursesService} from "./services/courses.service";
+import {CoursesService} from "./courses/services/courses.service";
 import {HttpClientModule} from "@angular/common/http";
-import {CourseResolver} from "./services/course.resolver";
-import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import {CourseResolver} from "./courses/services/course.resolver";
+import { CourseDialogComponent } from './courses/course-dialog/course-dialog.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatMomentDateModule} from "@angular/material-moment-adapter";
+import {CoursesModule} from './courses/courses.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        HomeComponent,
-        AboutComponent,
-        CourseComponent,
-        CoursesCardListComponent,
-        CourseDialogComponent
+      AppComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        MatMenuModule,
-        MatButtonModule,MatToolbarModule,
-        MatIconModule,
-        MatCardModule,
-        MatTabsModule,
-        MatSidenavModule,
-        MatListModule,
-        MatToolbarModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatProgressSpinnerModule,
-        MatDialogModule,
-        AppRoutingModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatMomentDateModule,
-        ReactiveFormsModule
+        CoursesModule
     ],
     providers: [
-        CoursesService,
-        CourseResolver
     ],
-    bootstrap: [AppComponent],
-    entryComponents: [CourseDialogComponent]
+    bootstrap: [AppComponent]
+
 })
 export class AppModule {
 }

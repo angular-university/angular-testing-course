@@ -2,7 +2,7 @@ import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {CoursesService} from './courses.service';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {COURSES} from '../../../server/db-data';
+import {COURSES} from '../../../../server/db-data';
 
 
 describe('CoursesService', () => {
