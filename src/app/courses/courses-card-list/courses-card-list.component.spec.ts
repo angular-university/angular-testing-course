@@ -11,7 +11,7 @@ import {setupCourses} from '../common/setup-test-data';
 
 
 
-describe('CoursesCardListComponent', async () => {
+describe('CoursesCardListComponent', () => {
 
   let fixture: ComponentFixture<CoursesCardListComponent>;
   let component:CoursesCardListComponent;
