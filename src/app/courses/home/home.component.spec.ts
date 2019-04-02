@@ -15,16 +15,15 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
-fdescribe('HomeComponent', () => {
+describe('HomeComponent', () => {
 
   let fixture: ComponentFixture<HomeComponent>;
   let component:HomeComponent;
   let el: DebugElement;
-  let courseServicesSpy: any;
 
-  courseServicesSpy = jasmine.createSpyObj('CoursesService', ['findAllCourses']);
+  beforeEach((() => {
 
-  beforeEach(async(() => {
+    const courseServicesSpy = jasmine.createSpyObj('CoursesService', ['findAllCourses']);
 
     TestBed.configureTestingModule({
       imports: [
@@ -35,25 +34,27 @@ fdescribe('HomeComponent', () => {
         {provide: CoursesService, useValue: courseServicesSpy}
       ]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.debugElement.componentInstance;
-    el = fixture.debugElement;
-
-
   }));
 
 
-  it("should create the component", async(() => {
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    el = fixture.debugElement;
+  });
+
+
+  it("should create the component", () => {
 
     expect(component).toBeTruthy();
 
-  }));
+  });
 
 
-  it("should display only beginner courses", async(() => {
+  it("should display only beginner courses", () => {
 
-    courseServicesSpy.findAllCourses.and.returnValue(of(setupCourses().filter(course => course.category == 'BEGINNER')));
+    TestBed.get(CoursesService).findAllCourses.and.returnValue(
+      of(setupCourses().filter(course => course.category == 'BEGINNER')));
 
     fixture.detectChanges();
 
@@ -61,10 +62,34 @@ fdescribe('HomeComponent', () => {
 
     expect(tabs.length).toBe(1, "Unexpected number of tabs found");
 
-  }));
+  });
 
 
+  it("should display only advanced courses", () => {
 
+    TestBed.get(CoursesService).findAllCourses.and.returnValue(
+      of(setupCourses().filter(course => course.category == 'ADVANCED')));
+
+    fixture.detectChanges();
+
+    const tabs = el.queryAll(By.css('.mat-tab-label'));
+
+    expect(tabs.length).toBe(1, "Unexpected number of tabs found ");
+
+  });
+
+
+  it("should display both tabs", () => {
+
+    TestBed.get(CoursesService).findAllCourses.and.returnValue(of(setupCourses()));
+
+    fixture.detectChanges();
+
+    const tabs = el.queryAll(By.css('.mat-tab-label'));
+
+    expect(tabs.length).toBe(2, "Expected to find 2 tabs");
+
+  });
 
 });
 

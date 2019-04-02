@@ -8,7 +8,7 @@ import {By} from '@angular/platform-browser';
 describe('AppComponent', () => {
 
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
@@ -22,36 +22,36 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
-  }));
+  });
 
 
 
-  it('should create the app', async(() => {
+  it('should create the app', () => {
 
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
 
-  }));
+  });
 
 
 
-  it(`should have a title property`, async(() => {
+  it(`should have a title property`, () => {
 
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Angular Testing Course');
 
-  }));
+  });
 
 
 
-  it('should have a navigation menu', async(() => {
+  it('should have a navigation menu', () => {
 
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     expect(fixture.debugElement.queryAll(By.css('mat-toolbar'))).toBeTruthy();
 
-  }));
+  });
 
 });

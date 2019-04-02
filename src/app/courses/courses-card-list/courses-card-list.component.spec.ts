@@ -17,8 +17,7 @@ describe('CoursesCardListComponent', () => {
   let component:CoursesCardListComponent;
   let el: DebugElement;
 
-  beforeEach(async(() => {
-
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
         CoursesModule
@@ -29,17 +28,25 @@ describe('CoursesCardListComponent', () => {
     component = fixture.debugElement.componentInstance;
     el = fixture.debugElement;
 
-  }));
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CoursesCardListComponent);
+    component = fixture.componentInstance;
+    el = fixture.debugElement;
+    fixture.detectChanges();
+
+  });
 
 
-  it("should create the component", async(() => {
+  it("should create the component", () => {
 
     expect(component).toBeTruthy();
 
-  }));
+  });
 
 
-  it("should display the course list", async(() => {
+  it("should display the course list", () => {
 
     component.courses = setupCourses();
 
@@ -50,10 +57,10 @@ describe('CoursesCardListComponent', () => {
     expect(cards).toBeTruthy("Could not finds cards");
     expect(cards.length).toBe(12, "Unexpected number of courses");
 
-  }));
+  });
 
 
-  it("should display the first course", async(() => {
+  it("should display the first course", () => {
 
     component.courses = setupCourses();
 
@@ -70,7 +77,7 @@ describe('CoursesCardListComponent', () => {
     expect(image.nativeElement.src).toBe(course.iconUrl, "Wrong image found");
 
 
-  }));
+  });
 
 
 });
