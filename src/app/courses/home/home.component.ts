@@ -22,8 +22,6 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
 
-      console.log("called Home ngOnInit()");
-
       this.reloadCourses();
 
     }
