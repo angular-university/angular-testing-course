@@ -25,7 +25,7 @@ describe('CalculatorService', () => {
 
     });
 
-    fit('should add two numbers', () => {
+    it('should add two numbers', () => {
 
         console.log("add test");
 
