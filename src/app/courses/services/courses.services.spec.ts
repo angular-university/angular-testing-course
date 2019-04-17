@@ -2,6 +2,8 @@ import {CoursesService} from './courses.service';
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {COURSES} from '../../../../server/db-data';
+import {Course} from '../model/course';
+
 
 describe('CoursesService', () => {
 
@@ -67,6 +69,23 @@ describe('CoursesService', () => {
         req.flush(COURSES[12]);
 
     });
+
+
+
+    it('should save the course data', () => {
+
+        const changes :Partial<Course> = {titles:{description: 'Testing Course'}};
+
+        coursesService.saveCourse(12, changes)
+            .subscribe(course => {
+
+                expect(course.id).toBe(12);
+
+            });
+
+    });
+
+
 
     afterEach(() => {
 
