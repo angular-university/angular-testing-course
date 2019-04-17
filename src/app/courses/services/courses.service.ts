@@ -26,7 +26,6 @@ export class CoursesService {
             );
     }
 
-
     saveCourse(courseId:number, changes: Partial<Course>): Observable<Course> {
         return this.http.put<Course>(`/api/courses/${courseId}`, changes);
     }
