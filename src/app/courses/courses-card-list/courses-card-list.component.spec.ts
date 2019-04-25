@@ -36,7 +36,6 @@ describe('CoursesCardListComponent', () => {
 
     });
 
-
     it('should display the course list', () => {
 
         component.courses = setupCourses();
@@ -49,10 +48,6 @@ describe('CoursesCardListComponent', () => {
         expect(cards.length).toBe(12, "Unexpected number of courses");
 
     });
-
-
-
-
 
     it('should display the first course', () => {
 
@@ -72,9 +67,7 @@ describe('CoursesCardListComponent', () => {
 
         expect(image.nativeElement.src).toBe(course.iconUrl);
 
-
     });
-
 
 });
 
