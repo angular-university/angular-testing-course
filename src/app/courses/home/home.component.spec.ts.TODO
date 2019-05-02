@@ -27,14 +27,6 @@ describe('HomeComponent', () => {
 
   }));
 
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    el = fixture.debugElement;
-  });
-
-
   it("should create the component", () => {
 
     expect(component).toBeTruthy();
