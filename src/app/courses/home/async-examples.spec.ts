@@ -1,3 +1,4 @@
+import {fakeAsync, flush, tick} from '@angular/core/testing';
 
 
 fdescribe("Async Testing Examples", () => {
@@ -19,7 +20,46 @@ fdescribe("Async Testing Examples", () => {
 
         }, 1000);
 
+
+
     });
 
 
+    it("Asynchronous test example - setTimeout()", fakeAsync(() => {
+
+        let test = false;
+
+        setTimeout(() => {});
+
+        setTimeout(() => {
+
+            console.log('running assertions setTimeout()');
+
+            test = true;
+
+        }, 1000);
+
+        flush();
+
+        expect(test).toBeTruthy();
+
+    }));
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
