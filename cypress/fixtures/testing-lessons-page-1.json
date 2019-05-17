@@ -1,0 +1,25 @@
+{
+  "payload": [
+    {
+      "id": 40,
+      "description": "Angular Testing Course - Helicopter View",
+      "duration": "5:38",
+      "seqNo": 1,
+      "courseId": 12
+    },
+    {
+      "id": 41,
+      "description": "Setting Up the Development Environment",
+      "duration": "5:12",
+      "seqNo": 2,
+      "courseId": 12
+    },
+    {
+      "id": 42,
+      "description": "Introduction to Jasmine, Spies and specs",
+      "duration": "4:07",
+      "seqNo": 3,
+      "courseId": 12
+    }
+  ]
+}
