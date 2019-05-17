@@ -1,0 +1,12 @@
+{
+  "id": 12,
+  "titles": {
+    "description": "Angular Testing Course",
+    "longDescription": "In-depth guide to Unit Testing and E2E Testing of Angular Applications"
+  },
+  "iconUrl": "https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png",
+  "category": "BEGINNER",
+  "seqNo": 0,
+  "url": "angular-testing-course",
+  "lessonsCount": 10
+}
