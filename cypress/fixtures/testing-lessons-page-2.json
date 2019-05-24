@@ -1,0 +1,25 @@
+{
+  "payload": [
+    {
+      "id": 43,
+      "description": "Introduction to Service Testing",
+      "duration": "7:32",
+      "seqNo": 4,
+      "courseId": 12
+    },
+    {
+      "id": 44,
+      "description": "Settting up the Angular TestBed",
+      "duration": "6:28",
+      "seqNo": 5,
+      "courseId": 12
+    },
+    {
+      "id": 45,
+      "description": "Mocking Angular HTTP requests",
+      "duration": "4:38",
+      "seqNo": 6,
+      "courseId": 12
+    }
+  ]
+}
