@@ -13,6 +13,37 @@
     "cypress:run": "cypress run"
   },
   "private": true,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "dependencies": {
     "@angular/animations": "7.0.0",
     "@angular/cdk": "^7.0.0",
