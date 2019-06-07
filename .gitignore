@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 tmp.html
 /local-samples
+*.mp4
