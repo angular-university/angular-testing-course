@@ -10,7 +10,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "build:prod": "ng build --prod",
+    "start:prod": "http-server ./dist -a localhost -p 4200",
+    "build-and-start:prod": "run-s build:prod start:prod",
+    "e2e": "start-server-and-test build-and-start:prod http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {
@@ -30,7 +34,9 @@
     "cypress": "^3.2.0",
     "express": "^4.16.2",
     "hammerjs": "^2.0.8",
+    "http-server": "^0.11.1",
     "moment": "^2.22.2",
+    "npm-run-all": "^4.1.5",
     "rxjs": "6.5.2",
     "zone.js": "~0.9.1"
   },
@@ -54,6 +60,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^6.0.0",
+    "start-server-and-test": "^1.9.1",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "3.4.5"
