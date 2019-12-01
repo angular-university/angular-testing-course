@@ -58,5 +58,4 @@ describe('CalculatorService', () => {
 
     expect(loggerSpy.log).toHaveBeenCalledTimes(1);
   });
-
 });
