@@ -113,7 +113,9 @@ describe('HomeComponent', () => {
 
       flush();
 
-      const cardTitles = el.queryAll(By.css('.mat-card-title'));
+      const cardTitles = el.queryAll(By.css('.mat-tab-body-active .mat-card-title'));
+
+      console.log(cardTitles);
 
       expect(cardTitles.length).toBeGreaterThan(0,"Could not find card titles");
 
@@ -138,7 +140,7 @@ describe('HomeComponent', () => {
 
             console.log("called whenStable() ");
 
-            const cardTitles = el.queryAll(By.css('.mat-card-title'));
+            const cardTitles = el.queryAll(By.css('.mat-tab-body-active .mat-card-title'));
 
             expect(cardTitles.length).toBeGreaterThan(0,"Could not find card titles");
 
