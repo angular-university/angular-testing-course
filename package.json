@@ -16,6 +16,10 @@
     "build-and-start:prod": "run-s build:prod start:prod",
     "e2e": "start-server-and-test build-and-start:prod http://localhost:4200 cypress:run"
   },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "12.0.0",
