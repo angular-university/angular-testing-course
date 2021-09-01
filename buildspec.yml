@@ -1,1 +1,18 @@
+version: 0.2
 
+phases:
+  install:
+    runtime-versions:
+        nodejs: 12
+  prebuild:	
+    commands:
+        - echo Installing source NPM dependencies...
+        - npm install
+        - npm install -g @angular/cli
+  build:
+    commands:
+        - echo Build started 
+        - ng build  
+artifacts:
+    files:
+        - '**/*'
