@@ -2,17 +2,16 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/express-app
+    destination: /var/www/html/
 hooks:
-  ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 300
-      runas: ec2-user
   BeforeInstall:
-    - location: scripts/before_install.sh
+    - location: scripts/install_dependencies
       timeout: 300
-      runas: ec2-user
-  ApplicationStart:
-    - location: scripts/application_start.sh
+      runas: root
+    - location: scripts/start_server
       timeout: 300
-      runas: ec2-user
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
