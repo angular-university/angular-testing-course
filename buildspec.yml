@@ -12,8 +12,10 @@ phases:
   build:
     commands:
         - echo Build started 
-        - ng build    
+        - ng build
+        - cp -p appspec.yml dist
 artifacts:
     files:
-        - '**/appspec.yml'
         - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes
