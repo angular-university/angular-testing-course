@@ -13,15 +13,13 @@ phases:
     commands:
         - echo Build started 
         - ng build
-        - cp -p appspec.yml dist
-        - zip -r scripts.zip scripts
-        - cp -p scripts.zip dist
-        - cd dist
-        - unzip scripts.zip
-        - rm scripts.zip
-        - cd ../
+  post_build:
+    commands:
+      - mkdir staging
+      - cp -avr dist staging
+      - cp -avr scripts staging
+      - cp -p appspec.yml staging             
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist'
-    discard-paths: no
+    base-directory: staging
