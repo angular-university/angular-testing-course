@@ -14,7 +14,7 @@ phases:
         - echo Build started 
         - ng build
         - cp -p appspec.yml dist
-        - cp -R scripts dist
+        - cp -avr scripts dist
 artifacts:
     files:
         - '**/*'
