@@ -3,20 +3,14 @@
 
 This repository contains the code of the [Angular Testing Course](https://angular-university.io/course/angular-testing-course).
 
-This course repository is updated to Angular v12, and there is a  package-lock.json file available, for avoiding semantic versioning installation issues.
+This course repository is updated to Angular v13, and there is a  package-lock.json file available, for avoiding semantic versioning installation issues.
 
 ![Angular Testing Course](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png)
 
 
 # Installation pre-requisites
 
-For running this project we need node and npm installed on our machine. These are some tutorials to install node in different operating systems:
-
-*Its important to install the latest version of Node*
-
-- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
-- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
-- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
+Please install Node 16 Long Term Support Edition (LTE).
 
 
 # Installing the Angular CLI
