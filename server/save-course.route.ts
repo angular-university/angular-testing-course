@@ -5,7 +5,7 @@ import {findCourseById} from './db-data';
 
 export function saveCourse(req: Request, res: Response) {
 
-  const id = req.params["id"],
+  const id = req.params["id"] as any,
     changes = req.body;
 
   console.log("Saving course", id, JSON.stringify(changes));
