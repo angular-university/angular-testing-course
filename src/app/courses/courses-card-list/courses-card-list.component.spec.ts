@@ -7,7 +7,6 @@ import {By} from '@angular/platform-browser';
 import {sortCoursesBySeqNo} from '../home/sort-course-by-seq';
 import {Course} from '../model/course';
 import {setupCourses} from '../common/setup-test-data';
-import {Test} from 'tslint';
 
 
 describe('CoursesCardListComponent', () => {

@@ -66,7 +66,7 @@ describe('HomeComponent', () => {
 
       fixture.detectChanges();
 
-      const tabs = el.queryAll(By.css(".mat-tab-label"));
+      const tabs = el.queryAll(By.css(".mdc-tab"));
 
       expect(tabs.length).toBe(1, "Unexpected number of tabs found");
 
@@ -79,7 +79,7 @@ describe('HomeComponent', () => {
 
       fixture.detectChanges();
 
-      const tabs = el.queryAll(By.css(".mat-tab-label"));
+      const tabs = el.queryAll(By.css(".mdc-tab"));
 
       expect(tabs.length).toBe(1, "Unexpected number of tabs found");
 
@@ -92,7 +92,7 @@ describe('HomeComponent', () => {
 
       fixture.detectChanges();
 
-      const tabs = el.queryAll(By.css(".mat-tab-label"));
+      const tabs = el.queryAll(By.css(".mdc-tab"));
 
       expect(tabs.length).toBe(2, "Expected to find 2 tabs");
 
@@ -105,7 +105,7 @@ describe('HomeComponent', () => {
 
       fixture.detectChanges();
 
-      const tabs = el.queryAll(By.css(".mat-tab-label"));
+      const tabs = el.queryAll(By.css(".mdc-tab"));
 
       click(tabs[1]);
 
@@ -113,7 +113,7 @@ describe('HomeComponent', () => {
 
       flush();
 
-      const cardTitles = el.queryAll(By.css('.mat-tab-body-active .mat-card-title'));
+      const cardTitles = el.queryAll(By.css('.mat-mdc-tab-body-active .mat-mdc-card-title'));
 
       console.log(cardTitles);
 
@@ -130,7 +130,7 @@ describe('HomeComponent', () => {
 
         fixture.detectChanges();
 
-        const tabs = el.queryAll(By.css(".mat-tab-label"));
+        const tabs = el.queryAll(By.css(".mdc-tab"));
 
         click(tabs[1]);
 
@@ -140,7 +140,7 @@ describe('HomeComponent', () => {
 
             console.log("called whenStable() ");
 
-            const cardTitles = el.queryAll(By.css('.mat-tab-body-active .mat-card-title'));
+            const cardTitles = el.queryAll(By.css('.mat-mdc-tab-body-active .mat-mdc-card-title'));
 
             expect(cardTitles.length).toBeGreaterThan(0,"Could not find card titles");
 

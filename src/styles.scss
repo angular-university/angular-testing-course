@@ -1,55 +1,41 @@
+
 @use '@angular/material' as mat;
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+@include mat.core();
 
+$dark-primary-text: rgba(black, 0.87);
+
+$light-primary-text: white;
+
+$primary: mat.define-palette(mat.$teal-palette, 500);
+
+$accent: mat.define-palette(mat.$red-palette, A200, A100, A400);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($theme);
+
+.mat-elevation-z7 {
+  box-shadow: 0 4px 5px -2px #0003, 0 7px 10px 1px #00000024, 0 2px 16px 1px #0000001f !important;
+}
+
+.mat-elevation-z10 {
+  box-shadow: 0 6px 6px -3px #0003, 0 10px 14px 1px #00000024, 0 4px 18px 3px #0000001f !important;
+}
 
 .container {
   max-width: 400px;
   margin: 0 auto;
 }
 
-// Include non-theme styles for core.
-@include mat.core();
-
-$mat-custom-theme: (
-        50: #e8f5e9,
-        100: #c8e6c9,
-        200: #a5d6a7,
-        300: #81c784,
-        400: #66bb6a,
-        500: #3dc046,
-        600: #43a047,
-        700: #388e3c,
-        800: #2e7d32,
-        900: #1b5e20,
-        A100: #b9f6ca,
-        A200: #69f0ae,
-        A400: #00e676,
-        A700: #00c853,
-        contrast: (
-                50: rgba(black, 0.87),
-                100: rgba(black, 0.87),
-                200: rgba(black, 0.87),
-                300: rgba(black, 0.87),
-                400: rgba(black, 0.87),
-                500: white,
-                600: white,
-                700: white,
-                800: white,
-                900: white,
-                A100: rgba(black, 0.87),
-                A200: white,
-                A400: white,
-                A700: white,
-        )
-);
-
-// Define a theme.
-$primary: mat.define-palette(mat.$teal-palette);
-$accent:  mat.define-palette(mat.$red-palette, A200, A100, A400);
-
-$theme: mat.define-light-theme($primary, $accent);
-
-// Include all theme styles for the components.
-@include mat.all-component-themes($theme);
