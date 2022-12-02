@@ -7,13 +7,13 @@
 
 .course-thumbnail {
     width: 150px;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 20px auto;
     display: block;
 }
 
 .description-cell {
     text-align: left;
-    margin: 10px auto;
+    padding: 10px 0;
 }
 
 .duration-cell {
@@ -37,6 +37,14 @@
     margin-top: 10px;
 }
 
+mat-paginator {
+  margin-bottom: 10px;
+}
+
 .spinner-container mat-spinner {
     margin: 130px auto 0 auto;
+}
+
+.mat-elevation-z8 {
+  padding-bottom: 5px;
 }
