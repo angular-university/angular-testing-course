@@ -46,7 +46,7 @@
     "@angular/cli": "^15.0.1",
     "@angular/compiler-cli": "15.0.2",
     "@angular/language-service": "15.0.2",
-    "@cypress/webpack-preprocessor": "^4.0.3",
+    "@cypress/webpack-preprocessor": "^5.16.1",
     "@types/express": "^4.0.39",
     "@types/jasmine": "~4.3.0",
     "@types/jasminewd2": "~2.0.2",
