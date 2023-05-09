@@ -26,7 +26,6 @@ import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import {CoursesService} from "./courses/services/courses.service";
 import {HttpClientModule} from "@angular/common/http";
-import {CourseResolver} from "./courses/services/course.resolver";
 import { CourseDialogComponent } from './courses/course-dialog/course-dialog.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatMomentDateModule} from "@angular/material-moment-adapter";
