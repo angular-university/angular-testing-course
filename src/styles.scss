@@ -1,41 +1,48 @@
-
 @use '@angular/material' as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-@include mat.core();
-
+/* settings */
 $dark-primary-text: rgba(black, 0.87);
-
 $light-primary-text: white;
-
 $primary: mat.define-palette(mat.$teal-palette, 500);
-
 $accent: mat.define-palette(mat.$red-palette, A200, A100, A400);
+$theme: mat.define-light-theme(
+  (color: (primary: $primary, accent: $accent), 
+  typography: mat.define-typography-config(), 
+  density: 0)
+);
 
-$theme: mat.define-light-theme((
-  color: (
-    primary: $primary,
-    accent: $accent,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
-));
-
+/* generic */
+@include mat.core();
 @include mat.all-component-themes($theme);
 
-.mat-elevation-z7 {
-  box-shadow: 0 4px 5px -2px #0003, 0 7px 10px 1px #00000024, 0 2px 16px 1px #0000001f !important;
+/* tags */
+html {
+  height: 100%;
 }
 
-.mat-elevation-z10 {
-  box-shadow: 0 6px 6px -3px #0003, 0 10px 14px 1px #00000024, 0 4px 18px 3px #0000001f !important;
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.container {
+/* key-frames */
+
+/* objects */
+.o-container {
   max-width: 400px;
   margin: 0 auto;
 }
 
+/* components */
+/* scopes */ 
+/* external */
+
+/* utilities */
+.u-mat-elevation-z7 {
+  box-shadow: 0 4px 5px -2px #0003, 0 7px 10px 1px #00000024, 0 2px 16px 1px #0000001f !important;
+}
+
+.u-mat-elevation-z10 {
+  box-shadow: 0 6px 6px -3px #0003, 0 10px 14px 1px #00000024, 0 4px 18px 3px #0000001f !important;
+}

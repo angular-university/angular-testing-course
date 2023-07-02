@@ -1,8 +1,3 @@
-
->>> body {
-    margin: 0;
-}
-
-main {
+.c-app-main {
     margin: 30px;
 }
