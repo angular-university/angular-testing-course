@@ -1,71 +1,58 @@
+<div class="c-course-dialog">
+    <h2 class="c-course-dialog__title" mat-dialog-title>{{course.titles.description}}</h2>
 
-<h2 mat-dialog-title>{{course.titles.description}}</h2>
-
-
-<mat-dialog-content [formGroup]="form">
-
-    <mat-form-field>
-
-        <input matInput
+    <mat-dialog-content [formGroup]="form">
+        <mat-form-field class="c-course-dialog__mat-form-field">
+            <input 
+                matInput
                 placeholder="Course Description"
-               formControlName="description">
+                formControlName="description"
+            />
+        </mat-form-field>
 
-    </mat-form-field>
+        <mat-form-field class="c-course-dialog__mat-form-field">
+            <mat-select 
+                placeholder="Select category"
+                formControlName="category"
+            >
+                <mat-option value="BEGINNER">Beginner</mat-option>
+                <mat-option value="INTERMEDIATE">Intermediate</mat-option>
+                <mat-option value="ADVANCED">Advanced</mat-option>
+            </mat-select>
 
-    <mat-form-field>
+        </mat-form-field>
 
-        <mat-select placeholder="Select category"
-            formControlName="category">
+        <mat-form-field class="c-course-dialog__mat-form-field">
+            <input 
+                matInput 
+                [matDatepicker]="myDatepicker"
+                formControlName="releasedAt"
+            >
 
-            <mat-option value="BEGINNER">
-                Beginner</mat-option>
-            <mat-option value="INTERMEDIATE">
-                Intermediate</mat-option>
-            <mat-option value="ADVANCED">
-                Advanced</mat-option>
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
 
-        </mat-select>
+        <mat-form-field class="c-course-dialog__mat-form-field">
+            <textarea 
+                class="c-course-dialog__textarea" 
+                matInput 
+                placeholder="Description"
+                formControlName="longDescription"
+            ></textarea>
+        </mat-form-field>
+    </mat-dialog-content>
 
-    </mat-form-field>
+    <mat-dialog-actions>
+        <button mat-raised-button
+                (click)="close()">
+            Close
+        </button>
 
-    <mat-form-field>
-
-        <input matInput [matDatepicker]="myDatepicker"
-            formControlName="releasedAt">
-
-        <mat-datepicker-toggle matSuffix
-                               [for]="myDatepicker">
-
-        </mat-datepicker-toggle>
-
-        <mat-datepicker #myDatepicker></mat-datepicker>
-
-    </mat-form-field>
-
-    <mat-form-field>
-
-        <textarea matInput placeholder="Description"
-            formControlName="longDescription">
-
-        </textarea>
-
-    </mat-form-field>
-
-
-</mat-dialog-content>
-
-<mat-dialog-actions>
-
-    <button mat-raised-button
-            (click)="close()">
-        Close
-    </button>
-
-    <button mat-raised-button primary="primary"
-            (click)="save()">
-        Save
-    </button>
-
-</mat-dialog-actions>
-
+        <button mat-raised-button primary="primary"(click)="save()">
+            Save
+        </button>
+    </mat-dialog-actions>
+</div> 
 

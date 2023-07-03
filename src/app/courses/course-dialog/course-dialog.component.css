@@ -1,11 +1,9 @@
-
-
-mat-form-field {
+.c-course-dialog__mat-form-field {
     display: block;
   width: 100%;
 }
 
-textarea {
+.c-course-dialog__textarea {
     height: 100px;
     resize: vertical;
 }

@@ -1,14 +1,12 @@
-
-
-.course-card {
+.c-courses-card-list__course-card {
     margin: 20px 10px;
 }
 
-.course-actions {
+.c-courses-card-list__course-actions {
   display: flex;
   justify-content: center;
 }
 
-.course-actions button {
+.c-courses-card-list__course-actions--button {
   margin-right: 5px;
 }

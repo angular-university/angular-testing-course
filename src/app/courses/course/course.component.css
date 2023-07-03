@@ -1,50 +1,49 @@
-
-.course {
+.c-course {
     text-align: center;
     max-width: 390px;
     margin: 0 auto;
 }
 
-.course-thumbnail {
+.course__thumbnail {
     width: 150px;
     margin: 20px auto 20px auto;
     display: block;
 }
 
-.description-cell {
+.c-course__description-cell {
     text-align: left;
     padding: 10px 0;
 }
 
-.duration-cell {
+.c-course__duration-cell {
     text-align: center;
 }
 
-.duration-cell mat-icon {
+.c-course__duration-cell--mat-icon {
     display: inline-block;
     vertical-align: middle;
     font-size: 20px;
 }
 
-.spinner-container {
+.c-course__spinner-container {
     height: 360px;
     width: 390px;
     position: fixed;
 }
 
-.lessons-table {
+.c-course__lessons-table {
     min-height: 360px;
     margin-top: 10px;
 }
 
-mat-paginator {
+.c-course__mat-paginator {
   margin-bottom: 10px;
 }
 
-.spinner-container mat-spinner {
+.c-course__spinner-container--mat-spinner {
     margin: 130px auto 0 auto;
 }
 
-.mat-elevation-z8 {
+.c-course__mat-elevation-z8 {
   padding-bottom: 5px;
 }
