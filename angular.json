@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-testing-course:build"
+            "buildTarget": "angular-testing-course:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-testing-course:build:production"
+              "buildTarget": "angular-testing-course:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-testing-course:build"
+            "buildTarget": "angular-testing-course:build"
           }
         },
 
