@@ -2,7 +2,7 @@ import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import {Course} from "../model/course";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
-import * as moment from 'moment';
+import moment from 'moment';
 import {CoursesService} from '../services/courses.service';
 import {tap} from 'rxjs/operators';
 
