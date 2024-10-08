@@ -1,34 +1,40 @@
-import { TestBed } from '@angular/core/testing';
 import { CalculatorService } from './calculator.service';
 import { LoggerService } from './logger.service';
 
+// Create a mock for LoggerService
 describe('CalculatorService', () => {
-  let service: CalculatorService;
-  let loggerSpy: jasmine.SpyObj<LoggerService>;
+  let calculatorService: CalculatorService;
+  let loggerService: jest.Mocked<LoggerService>;
 
   beforeEach(() => {
-    const spy = jasmine.createSpyObj('LoggerService', ['log']);
+    // Create a mock for LoggerService
+    loggerService = {
+      log: jest.fn()
+    } as jest.Mocked<LoggerService>;
 
-    TestBed.configureTestingModule({
-      providers: [
-        CalculatorService,
-        { provide: LoggerService, useValue: spy }
-      ]
-    });
-
-    service = TestBed.inject(CalculatorService);
-    loggerSpy = TestBed.inject(LoggerService) as jasmine.SpyObj<LoggerService>;
+    // Inject the mock into CalculatorService
+    calculatorService = new CalculatorService(loggerService);
   });
 
-  it('should add two numbers', () => {
-    const result = service.add(2, 3);
+  it('should add two numbers and log the operation', () => {
+    const result = calculatorService.add(2, 3);
+
+    // Check if the result is correct
     expect(result).toBe(5);
-    expect(loggerSpy.log).toHaveBeenCalledTimes(1);
+
+    // Check if the log method was called once with the correct message
+    expect(loggerService.log).toHaveBeenCalledTimes(1);
+    expect(loggerService.log).toHaveBeenCalledWith('Addition operation called');
   });
 
-  it('should subtract two numbers', () => {
-    const result = service.subtract(5, 3);
+  it('should subtract two numbers and log the operation', () => {
+    const result = calculatorService.subtract(5, 3);
+
+    // Check if the result is correct
     expect(result).toBe(2);
-    expect(loggerSpy.log).toHaveBeenCalledTimes(1);
+
+    // Check if the log method was called once with the correct message
+    expect(loggerService.log).toHaveBeenCalledTimes(1);
+    expect(loggerService.log).toHaveBeenCalledWith('Subtraction operation called');
   });
 });
