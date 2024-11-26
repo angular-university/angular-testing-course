@@ -9,7 +9,8 @@ import {tap} from 'rxjs/operators';
 @Component({
     selector: 'course-dialog',
     templateUrl: './course-dialog.component.html',
-    styleUrls: ['./course-dialog.component.css']
+    styleUrls: ['./course-dialog.component.css'],
+    standalone: false
 })
 export class CourseDialogComponent implements OnInit {
 
