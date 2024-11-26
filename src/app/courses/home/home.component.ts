@@ -8,7 +8,8 @@ import {sortCoursesBySeqNo} from './sort-course-by-seq';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
 
