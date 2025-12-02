@@ -1,23 +1,24 @@
-import {CalculatorService} from './calculator.service';
-import {LoggerService} from './logger.service';
-import {TestBed} from '@angular/core/testing';
-
+import { CalculatorService } from './calculator.service';
+import { LoggerService } from './logger.service';
+import { TestBed } from '@angular/core/testing';
+import {vi} from 'vitest'
 
 describe('CalculatorService', () => {
 
-    let calculator: CalculatorService,
-        loggerSpy: any;
+    let calculator: CalculatorService, loggerSpy: any;
 
-    beforeEach(()=> {
+    beforeEach(() => {
 
         console.log("Calling beforeEach");
 
-        loggerSpy = jasmine.createSpyObj('LoggerService', ["log"]);
+        loggerSpy = {
+            log: vi.fn().mockName("LoggerService.log")
+        };
 
         TestBed.configureTestingModule({
             providers: [
                 CalculatorService,
-                {provide: LoggerService, useValue: loggerSpy}
+                { provide: LoggerService, useValue: loggerSpy }
             ]
         });
 
@@ -44,7 +45,7 @@ describe('CalculatorService', () => {
 
         const result = calculator.subtract(2, 2);
 
-        expect(result).toBe(0, "unexpected subtraction result");
+        expect(result, "unexpected subtraction result").toBe(0);
 
         expect(loggerSpy.log).toHaveBeenCalledTimes(1);
 
