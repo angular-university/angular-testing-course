@@ -8,14 +8,12 @@
     "declaration": false,
     "moduleResolution": "bundler",
     "experimentalDecorators": true,
-    "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "es2022",   
+    "types": ["vitest/globals" ], 
     "lib": [
-      "es2017",
+      "ES2022",
       "dom",
-      "ES2017.object"
+      "ESNext.Disposable"
     ]
   }
 }

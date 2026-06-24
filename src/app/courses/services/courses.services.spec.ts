@@ -5,7 +5,6 @@ import {COURSES, findLessonsForCourse} from '../../../../server/db-data';
 import {Course} from '../model/course';
 import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-
 describe('CoursesService', () => {
 
     let coursesService: CoursesService,
@@ -32,10 +31,9 @@ describe('CoursesService', () => {
         coursesService.findAllCourses()
             .subscribe(courses => {
 
-                expect(courses).toBeTruthy('No courses returned');
+                expect(courses,'No courses returned' ).toBeTruthy();
 
-                expect(courses.length).toBe(12,
-                    "incorrect number of courses");
+                expect(courses.length, "incorrect number of courses").toBe(12);
 
                 const course = courses.find(course => course.id == 12);
 
@@ -103,7 +101,7 @@ describe('CoursesService', () => {
 
         coursesService.saveCourse(12, changes)
             .subscribe(
-                () => fail("the save course operation should have failed"),
+                () => assert.fail("the save course operation should have failed"),
 
                 (error: HttpErrorResponse) => {
                     expect(error.status).toBe(500);

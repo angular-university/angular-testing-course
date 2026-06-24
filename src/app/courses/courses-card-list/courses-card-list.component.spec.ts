@@ -1,11 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {CoursesCardListComponent} from './courses-card-list.component';
 import {CoursesModule} from '../courses.module';
-import {COURSES} from '../../../../server/db-data';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {sortCoursesBySeqNo} from '../home/sort-course-by-seq';
-import {Course} from '../model/course';
 import {setupCourses} from '../common/setup-test-data';
 
 
@@ -15,7 +12,7 @@ describe('CoursesCardListComponent', () => {
     let fixture: ComponentFixture<CoursesCardListComponent>;
     let el: DebugElement;
 
-    beforeEach(waitForAsync(() => {
+    beforeEach((() => {
         TestBed.configureTestingModule({
             imports: [CoursesModule]
         })
@@ -43,8 +40,8 @@ describe('CoursesCardListComponent', () => {
 
         const cards = el.queryAll(By.css(".course-card"));
 
-        expect(cards).toBeTruthy("Could not find cards");
-        expect(cards.length).toBe(12, "Unexpected number of courses");
+        expect(cards,"Could not find cards").toBeTruthy();
+        expect(cards.length,"Unexpected number of courses").toBe(12);
 
     });
 
@@ -60,7 +57,7 @@ describe('CoursesCardListComponent', () => {
                 title = card.query(By.css("mat-card-title")),
                 image = card.query(By.css("img"));
 
-        expect(card).toBeTruthy("Could not find course card");
+        expect(card,"Could not find course card").toBeTruthy();
 
         expect(title.nativeElement.textContent).toBe(course.titles.description);
 
